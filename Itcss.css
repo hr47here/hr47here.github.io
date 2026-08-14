@@ -18,7 +18,9 @@ body{
     color:#fff;
 }
 
-/* NAVIGATION */
+/* ===========================
+   NAVIGATION
+=========================== */
 
 nav{
     position:fixed;
@@ -43,14 +45,18 @@ nav{
     cursor:pointer;
     text-shadow:0 0 8px rgba(229,9,20,.6);
 }
+
 .menu-toggle{
     display:none;
 }
 
 .menu{
     display:flex;
+    align-items:center;
     list-style:none;
     gap:28px;
+    margin:0;
+    padding:0;
 }
 
 .menu li a{
@@ -64,31 +70,26 @@ nav{
     color:#e50914;
 }
 
+.search{
+    display:block;
+}
+
 .search input{
-
     width:220px;
-
     height:38px;
-
     border:none;
-
     outline:none;
-
     border-radius:30px;
-
     padding-left:18px;
-
     background:#222;
-
     color:white;
-
 }
 
 .search input::placeholder{
-
     color:#aaa;
-
 }
+
+
 
 /* HERO */
 
