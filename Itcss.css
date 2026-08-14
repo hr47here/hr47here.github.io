@@ -43,6 +43,9 @@ nav{
     cursor:pointer;
     text-shadow:0 0 8px rgba(229,9,20,.6);
 }
+.menu-toggle{
+    display:none;
+}
 
 .menu{
     display:flex;
