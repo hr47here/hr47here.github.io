@@ -999,32 +999,37 @@ button:active{
 }
 
 /* =========================
-   HR47 GUN
+   HR47 GUN DISPLAY
 ========================= */
 
 .hr47-gun{
-    position:absolute;
-    top:135px;
-    left:50%;
-    transform:translateX(-50%);
-    width:420px;
-    z-index:5;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
     pointer-events:none;
 }
 
 .hr47-gun img{
-    width:100%;
+    width:650px;
+    max-width:80%;
     height:auto;
     display:block;
-    filter:drop-shadow(0 0 15px rgba(229,9,20,.6));
+    filter:drop-shadow(0 0 18px rgba(229,9,20,.35));
 }
 
-/* Mobile */
+/* MOBILE */
+
 @media(max-width:768px){
 
     .hr47-gun{
-        top:145px;
-        width:280px;
+        margin-bottom:20px;
     }
 
-   }
+    .hr47-gun img{
+        width:430px;
+        max-width:90%;
+    }
+
+}
