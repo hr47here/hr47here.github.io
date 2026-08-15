@@ -1000,12 +1000,22 @@ button:active{
 
 
 /* =========================
-   HR47 GUN - HERO DISPLAY
+   HR47 GUN DISPLAY
 ========================= */
+
+.hero{
+    position:relative;
+    z-index:10;
+}
+
+.overlay{
+    position:relative;
+    z-index:20;
+}
 
 .hr47-gun{
     position:absolute;
-    top:230px;
+    top:150px;
     left:50%;
     transform:translateX(-50%);
     width:100%;
@@ -1013,16 +1023,27 @@ button:active{
     justify-content:center;
     align-items:center;
     pointer-events:none;
-    z-index:5;
+    z-index:100;
 }
 
 .hr47-gun img{
     width:650px;
-    max-width:80%;
+    max-width:75%;
     height:auto;
     display:block;
-    filter:drop-shadow(0 0 18px rgba(229,9,20,.4));
+    position:relative;
+    z-index:101;
+    filter:drop-shadow(0 0 18px rgba(229,9,20,.45));
 }
+
+/* Keep the Welcome section below the gun */
+
+.overlay .featured{
+    position:relative;
+    z-index:110;
+    margin-top:300px;
+}
+
 
 /* =========================
    MOBILE
@@ -1030,13 +1051,28 @@ button:active{
 
 @media(max-width:768px){
 
+    .hero{
+        z-index:10;
+    }
+
+    .overlay{
+        z-index:20;
+    }
+
     .hr47-gun{
-        top:250px;
+        top:145px;
+        z-index:100;
     }
 
     .hr47-gun img{
         width:430px;
-        max-width:90%;
+        max-width:88%;
+        z-index:101;
+    }
+
+    .overlay .featured{
+        margin-top:300px;
+        z-index:110;
     }
 
 }
