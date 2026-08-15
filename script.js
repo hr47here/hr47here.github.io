@@ -195,3 +195,101 @@ infoPopup.style.display="none";
 }
 
     }
+
+/* =========================================
+   HR47 SNAKE INFINITY ANIMATION 🐍♾️
+========================================= */
+
+const snakeBox = document.querySelector(".snake-animation");
+const snakeImage = snakeBox?.querySelector("img");
+
+if (snakeBox && snakeImage) {
+
+    let startTime = null;
+
+    function animateSnake(time) {
+
+        if (!startTime) startTime = time;
+
+        const elapsed = (time - startTime) / 1000;
+
+        /*
+         * Main infinity movement
+         */
+
+        const speed = 0.75;
+
+        const t = elapsed * speed;
+
+        const width =
+            window.innerWidth <= 768 ? 145 : 250;
+
+        const height =
+            window.innerWidth <= 768 ? 75 : 120;
+
+
+        /*
+         * Parametric infinity / lemniscate
+         */
+
+        const x = width * Math.sin(t);
+
+        const y =
+            height *
+            Math.sin(t) *
+            Math.cos(t);
+
+
+        /*
+         * Calculate direction of movement
+         */
+
+        const dx =
+            width * Math.cos(t);
+
+        const dy =
+            height *
+            (Math.cos(t) * Math.cos(t)
+            - Math.sin(t) * Math.sin(t));
+
+
+        const angle =
+            Math.atan2(dy, dx) * 180 / Math.PI;
+
+
+        /*
+         * Extra body-like wave motion
+         */
+
+        const wave =
+            Math.sin(elapsed * 8) * 7;
+
+        const squeeze =
+            1 + Math.sin(elapsed * 10) * 0.035;
+
+
+        /*
+         * Apply movement
+         */
+
+        snakeBox.style.transform =
+            `translate(${x}px, ${y}px) 
+             rotate(${angle}deg)`;
+
+
+        /*
+         * Slithering effect
+         */
+
+        snakeImage.style.transform =
+            `rotate(${wave}deg)
+             scaleX(${squeeze})
+             scaleY(${1 / squeeze})`;
+
+
+        requestAnimationFrame(animateSnake);
+    }
+
+
+    requestAnimationFrame(animateSnake);
+}
