@@ -166,7 +166,7 @@ window.addEventListener("load", function () {
 
         document.getElementById("splash").classList.add("hide");
 
-    }, 2000);
+    }, 800);
 
 });
 
