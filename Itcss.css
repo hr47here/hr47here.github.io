@@ -1003,33 +1003,51 @@ button:active{
 ========================= */
 
 .hr47-gun{
+    position:absolute;
+    top:150px;
+    left:50%;
+    transform:translateX(-50%);
     width:100%;
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:25px;
     pointer-events:none;
+    z-index:2;
 }
 
 .hr47-gun img{
     width:650px;
-    max-width:80%;
+    max-width:75%;
     height:auto;
     display:block;
     filter:drop-shadow(0 0 18px rgba(229,9,20,.35));
 }
 
-/* MOBILE */
+
+/* Make room for the gun */
+
+.overlay .featured{
+    margin-top:220px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
     .hr47-gun{
-        margin-bottom:20px;
+        top:145px;
     }
 
     .hr47-gun img{
         width:430px;
-        max-width:90%;
+        max-width:82%;
     }
 
-}
+    .overlay .featured{
+        margin-top:220px;
+    }
+
+   }
