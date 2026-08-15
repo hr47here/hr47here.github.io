@@ -1002,6 +1002,16 @@ button:active{
    HR47 GUN DISPLAY
 ========================= */
 
+.hero{
+    position:relative;
+    z-index:10;
+}
+
+.overlay{
+    position:relative;
+    z-index:20;
+}
+
 .hr47-gun{
     position:absolute;
     top:150px;
@@ -1012,7 +1022,7 @@ button:active{
     justify-content:center;
     align-items:center;
     pointer-events:none;
-    z-index:2;
+    z-index:100;
 }
 
 .hr47-gun img{
@@ -1020,14 +1030,17 @@ button:active{
     max-width:75%;
     height:auto;
     display:block;
-    filter:drop-shadow(0 0 18px rgba(229,9,20,.35));
+    position:relative;
+    z-index:101;
+    filter:drop-shadow(0 0 18px rgba(229,9,20,.45));
 }
 
-
-/* Make room for the gun */
+/* Keep the Welcome section below the gun */
 
 .overlay .featured{
-    margin-top:220px;
+    position:relative;
+    z-index:110;
+    margin-top:300px;
 }
 
 
@@ -1037,17 +1050,28 @@ button:active{
 
 @media(max-width:768px){
 
+    .hero{
+        z-index:10;
+    }
+
+    .overlay{
+        z-index:20;
+    }
+
     .hr47-gun{
         top:145px;
+        z-index:100;
     }
 
     .hr47-gun img{
         width:430px;
-        max-width:82%;
+        max-width:88%;
+        z-index:101;
     }
 
     .overlay .featured{
-        margin-top:220px;
+        margin-top:300px;
+        z-index:110;
     }
 
    }
